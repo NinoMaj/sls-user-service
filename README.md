@@ -1,23 +1,30 @@
-### Create template
-
-```sh
-serverless create --template aws-nodejs
-```
-
-### Create test function
-
-```sh
-serverless create function -f testFunction --handler src/functions/testFunction.testFunction --path src/tests/
-```
-
 ### Run tests
 
 ```sh
 npm run test
 ```
 
-### Creating new service from template
+### Connecting service with app
 
 ```sh
-serverless create --template-path ../template-aws-nodejs --path my-new-service
+serverless
+```
+
+### Deploy service
+
+```sh
+serverless deploy
+```
+
+### Open dashboard
+
+```sh
+serverless dashboard
+```
+
+### Test service with curl
+
+```sh
+# -i flag to see response
+ curl --request POST --url https://ulwgjriyc2.execute-api.us-east-1.amazonaws.com/dev/v1/user --data '{"username": "testUsername", "password": "password"}' -H 'Content-Type: application/json' -i
 ```
